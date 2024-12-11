@@ -101,18 +101,18 @@
       font-size: 1.1rem;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       .menu-toggle {
         display: none;
       }
     }
 
     /* Responsive Adjustments */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       nav {
         position: fixed;
         top: 0;
-        height: 100vh;
+        height: 100dvh;
         z-index: 100;
         transform: translateX(-200px);
         transition: transform var(--transition-speed);
@@ -146,6 +146,7 @@
         all: unset;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 4dvh;
         cursor: pointer;
         margin-top: auto;
         color: rgba(255, 255, 255, 0.4);
