@@ -142,6 +142,22 @@
         z-index: 110;
       }
     }
+    button {
+        all: unset;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        margin-top: auto;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 10px;
+        &:hover {
+            color: rgba(255, 255, 255, 0.7); 
+        }
+    }
+    #legacy li a {
+        font-size: 12px;
+        color: #cacaca;
+    }
   </style>
 </head>
 <body>
@@ -157,6 +173,13 @@
       <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/Amusnet-Jackpot-Tracker/')">Amusnet Jackpots</a></li>
       <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/EGT-Jackpot-Tracker/')">EGT Jackpots</a></li>
     </ul>
+    <ul style="display: none;" id="legacy">
+        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/ambc_calculator/')">Balance Adjust</a></li>
+        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/wg-calculator/')">WG Calculator</a></li>
+        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/facebook-template-generator/')">FB Post Generator</a></li>
+        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/amb-story-board/')">Story</a></li>
+      </ul>
+      <button onclick="toggleDisplay()">Legacy Apps</button>
   </nav>
   <main>
     <!-- Start with a blank page or a known safe URL -->
@@ -173,6 +196,18 @@
       const iframe = document.getElementById('contentFrame');
       iframe.src = url;
     }
+
+    // Function to toggle display property
+function toggleDisplay() {
+    const element = document.getElementById("legacy");
+    if (element) {
+        // Check the current display style and toggle it
+        element.style.display = (element.style.display === "block") ? "none" : "block";
+    } else {
+        console.error("Element with ID 'legacy' not found.");
+    }
+}
+
   </script>
 </body>
 </html>
