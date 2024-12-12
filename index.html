@@ -111,6 +111,7 @@
         width: 100%;
         height: 100%;
         overflow: auto;
+        transition: all ease-in-out 300ms;
 
         @media (max-width: 600px) {
           width: 90%;
@@ -153,6 +154,11 @@
 
         nav.open {
           transform: translateX(0);
+        }
+        .open-sidebar .content-iframe {
+          width: 80%;
+          margin-left: 20%;
+          transition: all ease-in-out 300ms;
         }
       }
 
@@ -232,42 +238,42 @@
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/UserBoxChecker/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/UserBoxChecker/')"
             >User's Loot Boxes</a
           >
         </li>
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/SyndicateSessionUserConnection/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/SyndicateSessionUserConnection/')"
             >Betpool Session Stats</a
           >
         </li>
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/syndicatesessionupdater/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/syndicatesessionupdater/')"
             >Betpool Validity Update</a
           >
         </li>
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/Recent-Wins/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/Recent-Wins/')"
             >User's Latest Wins</a
           >
         </li>
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/Amusnet-Jackpot-Tracker/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/Amusnet-Jackpot-Tracker/')"
             >Amusnet Jackpots</a
           >
         </li>
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/EGT-Jackpot-Tracker/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/EGT-Jackpot-Tracker/')"
             >EGT Digital Jackpots</a
           >
         </li>
@@ -276,21 +282,21 @@
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/ambc_calculator/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/ambc_calculator/')"
             >Balance Adjust</a
           >
         </li>
         <li>
           <a
             href="#"
-            onclick="loadFrame('https://usernamenotavailable12.github.io/wg-calculator/'); toggleMenu()"
+            onclick="loadFrame('https://usernamenotavailable12.github.io/wg-calculator/')"
             >WG Calculator</a
           >
         </li>
       </ul>
       <button onclick="toggleDisplay()">Legacy Apps</button>
     </nav>
-    <main>
+    <main id="main" class="open-sidebar">
       <!-- Start with a blank page or a known safe URL -->
       <iframe
         class="content-iframe"
@@ -303,6 +309,8 @@
       function toggleMenu() {
         const sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("open");
+        const main = document.getElementById("main");
+        main.classList.toggle("open-sidebar");
       }
 
       function loadFrame(url) {
