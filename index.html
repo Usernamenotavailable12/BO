@@ -80,7 +80,7 @@
     main {
       flex: 1;
       background: white;
-      background-image: url(https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/b617b697-504d-47f5-9141-1e3cc1d9e279/157834-abstract-white-background-design.jpg?auto=format%2Ccompress);
+      background-image: url(https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/b617b697-504d-47f5-9141-1e3cc1d9e279/157834-abstract-white-background-design.jpg);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -204,9 +204,9 @@
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <nav id="sidebar" class="open">
     <div class="logo">
-      <a style="all:unset; cursor: pointer;" href="/">
+      <button style="all:unset; cursor: pointer;" onclick="refreshPage()">
         <h1>Amb BO</h1>
-      </a>
+      </button>
     </div>
     <ul>
       <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/UserBoxChecker/')">User Boxes</a>
@@ -259,6 +259,10 @@
       }
     }
 
+    function refreshPage() {
+      // This will reload the current page
+      location.reload();
+    }
   </script>
 </body>
 
