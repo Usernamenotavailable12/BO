@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ambassadori BO</title>
   <style>
     :root {
@@ -13,6 +14,7 @@
       --font-size: 16px;
       --transition-speed: 0.3s;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -77,10 +79,15 @@
     /* Main Content Area */
     main {
       flex: 1;
-      background: #f9f9f9;
+      background: white;
+      background-image: url(https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/b617b697-504d-47f5-9141-1e3cc1d9e279/157834-abstract-white-background-design.jpg?auto=format%2Ccompress);
       position: relative;
       display: flex;
       flex-direction: column;
+
+      iframe {
+        mix-blend-mode: multiply;
+      }
     }
 
     .content-iframe {
@@ -89,6 +96,7 @@
       width: 100%;
       height: 100%;
       overflow: auto;
+
       @media (max-width: 600px) {
         width: 90%;
         margin-left: 10%;
@@ -103,7 +111,33 @@
 
     @media (min-width: 768px) {
       .menu-toggle {
-        display: none;
+        display: block;
+      }
+
+      .menu-toggle {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        background: transparent;
+        color: var(--sidebar-color);
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        z-index: 110;
+        font-size: 18px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        height: 100dvh;
+        z-index: 100;
+        transform: translateX(-200px);
+        transition: transform var(--transition-speed);
+      }
+
+      nav.open {
+        transform: translateX(0);
       }
     }
 
@@ -137,50 +171,66 @@
         background: transparent;
         color: var(--sidebar-color);
         border: none;
-        padding: 10px;
+        padding: 9px;
         cursor: pointer;
         z-index: 110;
+        font-size: 15px;
       }
     }
+
     button {
-        all: unset;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 4dvh;
-        cursor: pointer;
-        margin-top: auto;
-        color: rgba(255, 255, 255, 0.4);
-        font-size: 10px;
-        &:hover {
-            color: rgba(255, 255, 255, 0.7); 
-        }
+      all: unset;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 4dvh;
+      cursor: pointer;
+      margin-top: auto;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 10px;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
     }
+
     #legacy li a {
-        font-size: 12px;
-        color: #cacaca;
+      font-size: 12px;
+      color: #cacaca;
     }
   </style>
 </head>
+
 <body>
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <nav id="sidebar" class="open">
     <div class="logo">
-      <h1>Amb BO</h1>
+      <a style="all:unset; cursor: pointer;" href="/">
+        <h1>Amb BO</h1>
+      </a>
     </div>
     <ul>
-      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/UserBoxChecker/')">User Boxes</a></li>
-      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/SyndicateSessionUserConnection/')">Syndicate Session List</a></li>
-      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/syndicatesessionupdater/')">Syndicate Time Update</a></li>
-      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/Amusnet-Jackpot-Tracker/')">Amusnet Jackpots</a></li>
-      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/EGT-Jackpot-Tracker/')">EGT Jackpots</a></li>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/UserBoxChecker/')">User Boxes</a>
+      </li>
+      <li><a href="#"
+          onclick="loadFrame('https://usernamenotavailable12.github.io/SyndicateSessionUserConnection/')">Syndicate
+          Session List</a></li>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/syndicatesessionupdater/')">Syndicate
+          Time Update</a></li>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/Amusnet-Jackpot-Tracker/')">Amusnet
+          Jackpots</a></li>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/EGT-Jackpot-Tracker/')">EGT
+          Jackpots</a></li>
     </ul>
     <ul style="display: none;" id="legacy">
-        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/ambc_calculator/')">Balance Adjust</a></li>
-        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/wg-calculator/')">WG Calculator</a></li>
-        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/facebook-template-generator/')">FB Post Generator</a></li>
-        <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/amb-story-board/')">Story</a></li>
-      </ul>
-      <button onclick="toggleDisplay()">Legacy Apps</button>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/ambc_calculator/')">Balance
+          Adjust</a></li>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/wg-calculator/')">WG Calculator</a>
+      </li>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/facebook-template-generator/')">FB
+          Post Generator</a></li>
+      <li><a href="#" onclick="loadFrame('https://usernamenotavailable12.github.io/amb-story-board/')">Story</a></li>
+    </ul>
+    <button onclick="toggleDisplay()">Legacy Apps</button>
   </nav>
   <main>
     <!-- Start with a blank page or a known safe URL -->
@@ -199,16 +249,17 @@
     }
 
     // Function to toggle display property
-function toggleDisplay() {
-    const element = document.getElementById("legacy");
-    if (element) {
+    function toggleDisplay() {
+      const element = document.getElementById("legacy");
+      if (element) {
         // Check the current display style and toggle it
         element.style.display = (element.style.display === "block") ? "none" : "block";
-    } else {
+      } else {
         console.error("Element with ID 'legacy' not found.");
+      }
     }
-}
 
   </script>
 </body>
+
 </html>
